@@ -16,12 +16,12 @@
         <form action="forgot" method="post">
             <p> Please enter your email address</p><br>
             <label for="email">Email Address: &nbsp;</label>
-            <input type="text" name="email" id="email">
+            <input type="email" name="email" id="email">
             
             <input type="submit" value="Submit">
         </form>
-       
-      <!--  <p> $.{message} </p>   Remove period if this is needed later -->
+      <p> ${message} </p>
+      <a href="login">Login</a>
         
     </body>
 </html>

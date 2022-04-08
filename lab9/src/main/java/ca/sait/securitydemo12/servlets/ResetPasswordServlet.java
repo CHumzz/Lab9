@@ -22,7 +22,8 @@ public class ResetPasswordServlet extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {      
+            throws ServletException, IOException {
+        getServletContext().getRequestDispatcher("/WEB-INF/reset.jsp").forward(request, response);
     }
 
     /**
@@ -35,6 +36,7 @@ public class ResetPasswordServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {   
+            throws ServletException, IOException {
+        getServletContext().getRequestDispatcher("/WEB-INF/reset.jsp").forward(request, response);
     }
 }
