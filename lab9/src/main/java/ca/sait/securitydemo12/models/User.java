@@ -50,6 +50,9 @@ public class User implements Serializable {
     @Basic(optional = false)
     @Column(name = "password")
     private String password;
+    @Basic(optional = false)
+    @Column(name = "reset_password_uuid")
+    private String resetPasswordUuid;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.EAGER)
     private List<Note> noteList;
     @JoinColumn(name = "role", referencedColumnName = "role_id")
@@ -133,6 +136,14 @@ public class User implements Serializable {
         int hash = 0;
         hash += (email != null ? email.hashCode() : 0);
         return hash;
+    }
+    
+    public String getResetPasswordUuid() {
+        return resetPasswordUuid;
+    }
+    
+    public void setResetPasswordUuid(String resetPasswordUuid) {
+        this.resetPasswordUuid = resetPasswordUuid;
     }
 
     @Override
