@@ -3,6 +3,8 @@ C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\ca\sait\security
 C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\filters\AuthenticationFilter.java
 C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\filters\AdminFilter.java
 C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\ca\sait\securitydemo12\dataaccess\NoteDB.java
+C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\ca\sait\securitydemo12\services\GmailService.java
+C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\ca\sait\securitydemo12\servlets\ResetPasswordServlet.java
 C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\ca\sait\securitydemo12\models\Note.java
 C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\ca\sait\securitydemo12\models\User.java
 C:\2021School\SEMESTER_3\CPRG352-WebApp\Lab9\lab9\src\main\java\ca\sait\securitydemo12\services\NoteService.java

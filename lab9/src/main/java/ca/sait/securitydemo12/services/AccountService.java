@@ -45,6 +45,9 @@ public class AccountService {
                 
                 GmailService.sendMail(to, subject,template, tags);
                 
+                user.setResetPasswordUuid(uuid);
+                userDB.update(user);
+                
             } else {
                 throw new Exception("User not found");
             }

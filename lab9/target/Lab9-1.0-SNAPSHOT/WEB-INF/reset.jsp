@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Forgot Password</h1>
-        <form action="forgot" method="post">
+        <form action="reset" method="post">
             <p> Please enter your email address</p><br>
             <label for="email">Email Address: &nbsp;</label>
             <input type="email" name="email" id="email">
