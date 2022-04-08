@@ -1,5 +1,6 @@
 package ca.sait.securitydemo12.servlets;
 
+import ca.sait.securitydemo12.services.AccountService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -37,6 +38,16 @@ public class ResetPasswordServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String email = request.getParameter("email");
+        String url = request.getRequestURI().toString();
+        String message;
+        String path = getServletContext().getRealPath("/WEB-INF");
+        AccountService as = new AccountService();
+        
+        as.resetPassword(email, path, url);
+        message = "If your email is valid, we will send you a link to reset your password. Please check your email for your request.";
+        request.setAttribute("message", message);
+        
         getServletContext().getRequestDispatcher("/WEB-INF/reset.jsp").forward(request, response);
     }
 }
