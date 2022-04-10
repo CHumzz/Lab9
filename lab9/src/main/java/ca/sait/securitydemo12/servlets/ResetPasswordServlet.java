@@ -1,5 +1,7 @@
 package ca.sait.securitydemo12.servlets;
 
+import ca.sait.securitydemo12.dataaccess.UserDB;
+import ca.sait.securitydemo12.models.User;
 import ca.sait.securitydemo12.services.AccountService;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,11 +52,27 @@ public class ResetPasswordServlet extends HttpServlet {
         String message;
         String path = getServletContext().getRealPath("/WEB-INF");
         AccountService as = new AccountService();
+        String uuid = request.getParameter("uuid");
         
+        if (uuid != null){
+            String password = request.getParameter("password");
+               
+                if (email != null && as.updatePassword(email, password, uuid)){
+                    message = "Your password was successfully updated";
+                } else {
+                    message = "Your password failed to update, please try again later.";
+                    request.setAttribute("uuid", uuid);
+                }
+                
+            request.setAttribute("message", message);    
+            getServletContext().getRequestDispatcher("/WEB-INF/newResetPassword.jsp").forward(request, response); 
+            
+        } else {
         as.resetPassword(email, path, url);
         message = "If your email is valid, we will send you a link to reset your password. Please check your email for your request.";
         request.setAttribute("message", message);
         
         getServletContext().getRequestDispatcher("/WEB-INF/reset.jsp").forward(request, response);
+        }
     }
 }

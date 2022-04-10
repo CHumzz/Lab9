@@ -145,7 +145,7 @@ public class User implements Serializable {
     public void setResetPasswordUuid(String resetPasswordUuid) {
         this.resetPasswordUuid = resetPasswordUuid;
     }
-
+    
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
