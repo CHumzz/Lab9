@@ -26,7 +26,7 @@ public class AccountService {
     public void resetPassword(String email, String path, String url){
         String uuid = UUID.randomUUID().toString();
         UserDB userDB = new UserDB();
-        String link = "http://localhost:8080/" + url + "?uuid=" + uuid; 
+        String link = "http://localhost:8080" + url + "?uuid=" + uuid; 
         
         try {
             User user = userDB.get(email);
