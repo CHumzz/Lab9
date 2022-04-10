@@ -13,12 +13,12 @@
     </head>
     <body>
         <h1>Reset Password</h1>
-        <p> Enter your new password below </p>
+        <p> If your email matches on file, the password will be updated. Enter your new password below. </p>
         
         <form action="reset" method="post">
             <input type="hidden" name="uuid" id="uuid" value="${uuid}">
-            <label for="email">You are changing the password for: </label>
-            <input type="text" name="email" id="email" value="${email}" readonly>
+            <label for="email">Enter your email: </label>
+            <input type="email" name="email" id="email" required><br>
             <label for="password">New Password: </label>
             <input type="password" name="password" id="password" required>
             <button type="submit">Change Password</button> 
