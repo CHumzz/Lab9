@@ -56,6 +56,30 @@ public class AccountService {
         } catch (Exception e) {
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, "Unuccessful reset by " + email, e);
         }
-    }    
+    } 
     
-}
+    public boolean updatePassword(String email, String password, String uuid){
+        UserDB userDB = new UserDB();
+        
+        try {
+            
+            User user = userDB.get(email);
+            if (user != null && user.getResetPasswordUuid().equals(uuid)) {
+                user.setPassword(password);
+                user.setResetPasswordUuid(null);
+                userDB.update(user);
+                Logger.getLogger(AccountService.class.getName()).log(Level.INFO, "Successful password change by {0}", email);
+                return true;
+            } else {
+                throw new Exception("User not found or UUID does not match");
+                       
+            } 
+            
+        }catch (Exception e){
+                    Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, "Unuccessful password change by " + email, e);
+                    return false;  
+        }
+        
+    }
+}  
+
