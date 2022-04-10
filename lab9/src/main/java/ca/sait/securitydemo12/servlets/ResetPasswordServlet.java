@@ -57,8 +57,8 @@ public class ResetPasswordServlet extends HttpServlet {
         if (uuid != null){
             String password = request.getParameter("password");
                
-                if (email != null && as.updatePassword(email, password, uuid)){
-                    message = "Your password was successfully updated";
+                if (email != null && password != null && as.updatePassword(email, password, uuid)){
+                    message = "Your password was successfully updated. Click the Login link below";
                 } else {
                     message = "Your password failed to update, please try again later.";
                     request.setAttribute("uuid", uuid);
@@ -69,7 +69,7 @@ public class ResetPasswordServlet extends HttpServlet {
             
         } else {
         as.resetPassword(email, path, url);
-        message = "If your email is valid, we will send you a link to reset your password. Please check your email for your request.";
+        message = "If your email is valid, we will send you a link to reset your password. Please close this page and check your email for your request.";
         request.setAttribute("message", message);
         
         getServletContext().getRequestDispatcher("/WEB-INF/reset.jsp").forward(request, response);
