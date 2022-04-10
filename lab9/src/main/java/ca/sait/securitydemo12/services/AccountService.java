@@ -35,12 +35,13 @@ public class AccountService {
                 
                 String to = user.getEmail();
                 String subject = "Notes App - Reset your Password";
-                String template = path + "/emailtemplates/resetpassword.html";
+                String template = path + "/resetpassword.html";
                 
                 HashMap<String, String> tags = new HashMap<>();
                 tags.put("firstname", user.getFirstName());
                 tags.put("lastname", user.getLastName());
                 tags.put("password", user.getPassword());
+                tags.put("link", link);
                 //tags.put("date", (new java.util.Date()).toString());
                 
                 GmailService.sendMail(to, subject,template, tags);
