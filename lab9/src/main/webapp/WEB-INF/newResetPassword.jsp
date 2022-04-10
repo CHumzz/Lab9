@@ -22,8 +22,9 @@
             <input type="email" name="email" id="email" required><br>
             <label for="password">New Password: </label>
             <input type="password" name="password" id="password" required>
-            <button type="submit">Change Password</button> 
-            
+            <button type="submit">Change Password</button>     
         </form>
+            <p>${message}</p>
+            <a href="login">Login</a>
     </body>
 </html>
