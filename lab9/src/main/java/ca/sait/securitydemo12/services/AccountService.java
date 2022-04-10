@@ -52,8 +52,7 @@ public class AccountService {
             } else {
                 throw new Exception("User not found");
             }
-               
-            
+                          
         } catch (Exception e) {
             Logger.getLogger(AccountService.class.getName()).log(Level.SEVERE, "Unuccessful reset by " + email, e);
         }
