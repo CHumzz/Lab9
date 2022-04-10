@@ -13,7 +13,8 @@
     </head>
     <body>
         <h1>Reset Password</h1>
-        <p> If your email matches on file, the password will be updated. Enter your new password below. </p>
+        <p> If your email matches on file, the password will be updated.</p><br>
+        <p> Enter email and your new password below. </p>
         
         <form action="reset" method="post">
             <input type="hidden" name="uuid" id="uuid" value="${uuid}">
