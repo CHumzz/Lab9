@@ -48,7 +48,7 @@ public class ResetPasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("email");
-        String url = request.getRequestURI().toString();
+        String url = request.getRequestURL().toString();
         String message;
         String path = getServletContext().getRealPath("/WEB-INF");
         AccountService as = new AccountService();
